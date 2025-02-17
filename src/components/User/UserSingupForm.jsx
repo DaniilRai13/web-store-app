@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import cls from './User.module.css'
 import { useDispatch } from 'react-redux'
 import { createUser } from '../../features/user/userSlice'
+import cls from './User.module.css'
 
 const UserSingupForm = ({ closeForm, toggleCurrentFormType }) => {
   const dispatch = useDispatch()
@@ -9,7 +9,8 @@ const UserSingupForm = ({ closeForm, toggleCurrentFormType }) => {
     name: '',
     email: '',
     password: '',
-    avatar: ''
+    avatar: '',
+    role:'user'
   })
 
   const handleChange = ({ target: { value, name } }) => {
@@ -33,7 +34,7 @@ const UserSingupForm = ({ closeForm, toggleCurrentFormType }) => {
         onClick={closeForm}
       >
         <svg className="icon">
-          <use xlinkHref={`${process.env.PUBLIC_URL}/sprite.svg#close`} />
+          <use xlinkHref={`../../../public/sprite.svg#close`} />
         </svg>
       </div>
 
