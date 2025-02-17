@@ -1,7 +1,7 @@
 import React from 'react'
 import cls from '../Cart.module.css'
 const CartItem = ({ changeQuantity, removeItem, item }) => {
-  const { title, category, images, price, id, quantity } = item;
+  const { title, category, images, price, id, quantity } = item
 
   return (
     <div className={cls.item} key={id}>
@@ -25,7 +25,7 @@ const CartItem = ({ changeQuantity, removeItem, item }) => {
         >
           <svg className="icon">
             <use
-              xlinkHref={`${process.env.PUBLIC_URL}/sprite.svg#minus`}
+              xlinkHref={`../../../../public/sprite.svg#minus`}
             />
           </svg>
         </div>
@@ -40,7 +40,7 @@ const CartItem = ({ changeQuantity, removeItem, item }) => {
         >
           <svg className="icon">
             <use
-              xlinkHref={`${process.env.PUBLIC_URL}/sprite.svg#plus`}
+              xlinkHref={`../../../../public/sprite.svg#plus`}
             />
           </svg>
         </div>
@@ -55,7 +55,7 @@ const CartItem = ({ changeQuantity, removeItem, item }) => {
       >
         <svg className="icon">
           <use
-            xlinkHref={`${process.env.PUBLIC_URL}/sprite.svg#close`}
+            xlinkHref={`../../../../public/sprite.svg#close`}
           />
         </svg>
       </div>

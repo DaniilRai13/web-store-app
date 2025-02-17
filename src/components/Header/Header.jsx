@@ -58,7 +58,7 @@ const Header = () => {
         <form className={cls.form}>
           <div className={cls.icon}>
             <svg className={cls.icon}>
-              <use xlinkHref={`${process.env.PUBLIC_URL}/sprite.svg#search`} />
+              <use xlinkHref={`../../../public/sprite.svg#search`} />
             </svg>
           </div>
           <div className={cls.input}>
@@ -90,13 +90,13 @@ const Header = () => {
         <div className={cls.account}>
           <Link to={ROUTES.HOME} className={cls.favourites}>
             <svg className={cls['icon-fav']}>
-              <use xlinkHref={`${process.env.PUBLIC_URL}/sprite.svg#heart`} />
+              <use xlinkHref={`../../../public//sprite.svg#heart`} />
             </svg>
           </Link>
 
           <Link to={ROUTES.CART} className={cls.cart}>
             <svg className={cls['icon-cart']} >
-              <use xlinkHref={`${process.env.PUBLIC_URL}/sprite.svg#bag`} />
+              <use xlinkHref={`../../../public//sprite.svg#bag`} />
             </svg>
             <span className={cls.count}>{cart.length}</span>
           </Link>

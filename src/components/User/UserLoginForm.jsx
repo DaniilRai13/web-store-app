@@ -33,7 +33,7 @@ const UserLoginForm = ({ closeForm, toggleCurrentFormType }) => {
         onClick={closeForm}
       >
         <svg className="icon">
-          <use xlinkHref={`${process.env.PUBLIC_URL}/sprite.svg#close`} />
+          <use xlinkHref={`../../../public/sprite.svg#close`} />
         </svg>
       </div>
 

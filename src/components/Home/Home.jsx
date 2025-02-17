@@ -9,7 +9,8 @@ import Categories from '../Categories/Categories'
 import Banner from '../Banner/Banner'
 
 const Home = () => {
-  const { categories, products: { list, filtered } } = useSelector((state) => state)
+  const { categories } = useSelector((state) => state)
+  const { products: { list, filtered } } = useSelector((state) => state)
   const dispatch = useDispatch()
   useEffect(() => {
     if (!list.length) return
