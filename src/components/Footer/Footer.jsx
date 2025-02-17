@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import LOGO from '../../images/logo.png'
 import { ROUTES } from '../../utils/routes.js'
 import cls from './Footer.module.css'
+import InstaIcon from '../react-icons/InstaIcon.jsx'
+import { FacebookIcon } from '../react-icons/FacebookIcon.jsx'
 
 const Footer = () => {
   return (
@@ -22,21 +24,11 @@ const Footer = () => {
 
       <div className={cls.socials}>
         <a href="/" target="_blank" rel="noreferrer">
-          <svg className="icon">
-            <use xlinkHref={`../../../public//sprite.svg#instagram`} />
-          </svg>
+          <InstaIcon />
         </a>
 
         <a href="/" target="_blank" rel="noreferrer">
-          <svg className="icon">
-            <use xlinkHref={`../../../public//sprite.svg#facebook`} />
-          </svg>
-        </a>
-
-        <a href="/" target="_blank" rel="noreferrer">
-          <svg className="icon">
-            <use xlinkHref={`../../../public//sprite.svg#youtube`} />
-          </svg>
+          <FacebookIcon />
         </a>
       </div>
     </section>

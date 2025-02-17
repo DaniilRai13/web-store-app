@@ -6,8 +6,11 @@ import { toggleForm } from '../../features/user/userSlice.js'
 import AVATAR from '../../images/avatar.jpg'
 import LOGO from '../../images/logo.png'
 import { ROUTES } from '../../utils/routes.js'
+import BasketIcon from '../react-icons/BasketIcon'
+import HeartIcon from '../react-icons/HeartIcon.jsx'
 import cls from './Header.module.css'
 import SearchCard from './SearchCard/SearchCard.jsx'
+import SearchIcon from '../react-icons/SearchIcon.jsx'
 
 const Header = () => {
   const dispatch = useDispatch()
@@ -57,9 +60,7 @@ const Header = () => {
         </div>
         <form className={cls.form}>
           <div className={cls.icon}>
-            <svg className={cls.icon}>
-              <use xlinkHref={`../../../public/sprite.svg#search`} />
-            </svg>
+           <SearchIcon />
           </div>
           <div className={cls.input}>
             <input
@@ -89,15 +90,11 @@ const Header = () => {
         </form>
         <div className={cls.account}>
           <Link to={ROUTES.HOME} className={cls.favourites}>
-            <svg className={cls['icon-fav']}>
-              <use xlinkHref={`../../../public//sprite.svg#heart`} />
-            </svg>
+            <HeartIcon />
           </Link>
 
           <Link to={ROUTES.CART} className={cls.cart}>
-            <svg className={cls['icon-cart']} >
-              <use xlinkHref={`../../../public//sprite.svg#bag`} />
-            </svg>
+            <BasketIcon />
             <span className={cls.count}>{cart.length}</span>
           </Link>
 
