@@ -1,14 +1,15 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { BASE_URL } from "../../utils/constans";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 import axios from 'axios'
+import { BASE_URL } from "../../utils/constans"
 
 export const createUser = createAsyncThunk(
   'users/createUser',
   async (payload, thunkApi) => {
     try {
-      const res = await axios.post(`${BASE_URL}/users`, payload);
+      console.log(payload)
+      const res = await axios.post(`${BASE_URL}/users`, payload)
       console.log(res.data)
-      return res.data;
+      return res.data
     } catch (err) {
       console.log(err)
       return thunkApi.rejectWithValue(err)
@@ -19,15 +20,15 @@ export const loginUser = createAsyncThunk(
   'users/loginUser',
   async (payload, thunkApi) => {
     try {
-      const res = await axios.post(`${BASE_URL}/auth/login`, payload);
+      const res = await axios.post(`${BASE_URL}/auth/login`, payload)
       console.log(payload, res.data)
       const login = await axios(`${BASE_URL}/auth/profile`, {
         headers: {
           "Authorization": `Bearer ${res.data.access_token}`
         }
-      });
+      })
       console.log(login.data)
-      return login.data;
+      return login.data
     } catch (err) {
       console.log(err)
       return thunkApi.rejectWithValue(err)
@@ -39,9 +40,9 @@ export const updateUser = createAsyncThunk(
   'users/updateUser',
   async (payload, thunkApi) => {
     try {
-      const res = await axios.put(`${BASE_URL}/users/${payload.id}`, payload);
+      const res = await axios.put(`${BASE_URL}/users/${payload.id}`, payload)
       console.log(res.data)
-      return res.data;
+      return res.data
     } catch (err) {
       console.log(err)
       return thunkApi.rejectWithValue(err)
@@ -80,7 +81,7 @@ const userSlice = createSlice({
         newCart = [...newCart, { ...payload, quantity: 1 }]
       }
 
-      state.cart = newCart;
+      state.cart = newCart
       console.log(state.cart)
     },
     addItemToFavourites: (state, { payload }) => {
@@ -98,7 +99,7 @@ const userSlice = createSlice({
         newFavourites = [...newFavourites, { ...payload, quantity: 1 }]
       }
 
-      state.favourites = newFavourites;
+      state.favourites = newFavourites
       console.log(state.favourites)
     },
     removeItemFromCart: (state, { payload }) => {
@@ -126,5 +127,5 @@ const userSlice = createSlice({
 
   },
 })
-export const { addItemToCart, addItemToFavourites, removeItemFromCart, toggleForm, toggleType } = userSlice.actions;
+export const { addItemToCart, addItemToFavourites, removeItemFromCart, toggleForm, toggleType } = userSlice.actions
 export default userSlice.reducer
